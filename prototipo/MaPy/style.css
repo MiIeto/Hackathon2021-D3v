@@ -8,10 +8,6 @@
     --light: #fff;
 }
 
-body {
-    height: 100vh;
-}
-
 .map-c {
     height: 50vh;
     width: 90%;
@@ -44,7 +40,7 @@ button{
 }
 
 .i-body {
-    height: 100%;
+    height: 100vh;
     background: var(--primary-light);
     color: var(--dark);
 }
