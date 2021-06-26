@@ -14,8 +14,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js%22%3E"></script>
+
     <!--<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />-->
+    <script src="https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
     <link href="https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css" rel="stylesheet">
     
     
@@ -48,34 +49,57 @@
         <div class="border border-dark mt-5 map-c">
             <div id='map' class="map"></div>
             <script>
-                var apikey= 
-                    'pk.eyJ1IjoibWlsZXRvIiwiYSI6ImNraGwyd3F1eTBwbGcyc3A5ZmlwNTEzb3gifQ.oI_umwJqNk7BHc7CbO7EAQ';
-                /*mapboxgl.accessToken =
-                    'pk.eyJ1IjoibWlsZXRvIiwiYSI6ImNraGwyd3F1eTBwbGcyc3A5ZmlwNTEzb3gifQ.oI_umwJqNk7BHc7CbO7EAQ';*/
-                var center = [-71.194577, -33.570972];
-                L.mapbox.accessToken = apikey;
-                /*var map = new mapboxgl.Map({
+                //var apikey = 'pk.eyJ1IjoibWlsZXRvIiwiYSI6ImNraGwyd3F1eTBwbGcyc3A5ZmlwNTEzb3gifQ.oI_umwJqNk7BHc7CbO7EAQ';
+                mapboxgl.accessToken = 'pk.eyJ1IjoibWlsZXRvIiwiYSI6ImNraGwyd3F1eTBwbGcyc3A5ZmlwNTEzb3gifQ.oI_umwJqNk7BHc7CbO7EAQ';
+
+                //var center = [-71.194577, -33.570972];
+                
+                //L.mapbox.accessToken = apikey;
+
+                var map = new mapboxgl.Map({
                     container: 'map',
                     style: 'mapbox://styles/mapbox/streets-v11',
                     center: [-71.194577, -33.570972],
                     zoom: 15
-                });*/
-                var map = L.mapbox.map('map', 'mapbox.light',{
-                    zoomControl: true
-                }).setView([mapCenter[0], mapCenter[1]], 9);
-                map.dragging.diable();
-                map.touchZoom.disable();
-                map.scrollWheelZomm.disable();
+                });
 
-                var markers = L.mapbox.featureLayer().addTo(map);
-                var geoJson = [{
+                /*var map = L.mapbox.map('map', 'mapbox.streets-v11',{
+                    zoomControl: true
+                }).setView([center[0], center[1]], 15);*/
+
+                //var markers = L.mapbox.featureLayer().addTo(map);
+
+                map.addSource('points',{
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'Feature',
+                        geometry:{
+                            type: 'Point',
+                            coordinates: [-71.194577, -33.570972]
+                        },
+                        properties:{
+                            title: 'Delicias de Kari',
+                            address: '1234 culipran',
+                            description: 'Vendemos los mejores postres de todo melipilla',
+                            'water': true,
+                            'outdoor':true,
+                            'civil':false,
+                            'wildlife':true,
+                            'heritage':false,
+                            'marker-color': '#94a748'
+                        }
+
+                    }
+                });
+
+                /*var geoJson = [{
                     type: 'Feature',
                     geometry:{
                         type: 'Point',
                         coordinates: [-71.194577, -33.570972]
                     },
                     properties:{
-                        title: 'Delicias de Gary',
+                        title: 'Delicias de Kari',
                         address: '1234 culipran',
                         description: 'Vendemos los mejores postres de todo melipilla',
                         'water': true,
@@ -85,8 +109,10 @@
                         'heritage':false,
                         'marker-color': '#94a748'
                     }
-                }];
-                markers.setGeoJSON(geoJson);
+                }];*/
+
+                //markers.setGeoJSON(geoJson);
+
             </script>
             <script src="main.js"></script>
         </div>
