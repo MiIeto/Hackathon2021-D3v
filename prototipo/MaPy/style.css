@@ -20,3 +20,11 @@ button{
 .search{
     height: 1.3em;
 }
+
+.msg {
+    height: 3em;
+}
+
+.save {
+    height: 2.4em;
+}
