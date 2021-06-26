@@ -15,7 +15,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-    <!--<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     <script src="https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
     <link href="https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css" rel="stylesheet">
     
@@ -31,11 +31,11 @@
             <h1>MaPy</h1>
         </div>
         <div class="d-flex row g-3 container">
-            <div class="d-flex align-items-center">
+            <!--<div class="d-flex align-items-center">
                 <h3 class="m-1">Radio</h3>
                 <input class="form-range ms-4 me-2" type="range" min="100" max="2000" id="myRango" value="100"></input>
                 <span id="value"></span>mts.
-            </div>
+            </div>-->
             <div class="d-flex align-items-center">
                 <h3 class="m-1">Tipo Servicio</h3>
                 <select class="form-select m-1" id=""></select>
@@ -49,12 +49,7 @@
         <div class="border border-dark mt-5 map-c">
             <div id='map' class="map"></div>
             <script>
-                //var apikey = 'pk.eyJ1IjoibWlsZXRvIiwiYSI6ImNraGwyd3F1eTBwbGcyc3A5ZmlwNTEzb3gifQ.oI_umwJqNk7BHc7CbO7EAQ';
                 mapboxgl.accessToken = 'pk.eyJ1IjoibWlsZXRvIiwiYSI6ImNraGwyd3F1eTBwbGcyc3A5ZmlwNTEzb3gifQ.oI_umwJqNk7BHc7CbO7EAQ';
-
-                //var center = [-71.194577, -33.570972];
-                
-                //L.mapbox.accessToken = apikey;
 
                 var map = new mapboxgl.Map({
                     container: 'map',
@@ -63,61 +58,22 @@
                     zoom: 15
                 });
 
-                /*var map = L.mapbox.map('map', 'mapbox.streets-v11',{
-                    zoomControl: true
-                }).setView([center[0], center[1]], 15);*/
+                var mark1 = new mapboxgl.Marker().setLngLat([-71.196243, -33.570800]).addTo(map);
+                var mark2 = new mapboxgl.Marker().setLngLat([-71.195457, -33.570183]).addTo(map);
+                var mark3 = new mapboxgl.Marker().setLngLat([-71.197538, -33.571177]).addTo(map);
+                var mark4 = new mapboxgl.Marker().setLngLat([-71.198453, -33.572004]).addTo(map);
+                var mark5 = new mapboxgl.Marker().setLngLat([-71.190887, -33.571754]).addTo(map);
 
-                //var markers = L.mapbox.featureLayer().addTo(map);
+                mark1.on('click', function(e) {
+                    e.layer.closePopup();
 
-                map.addSource('points',{
-                    'type': 'geojson',
-                    'data': {
-                        'type': 'Feature',
-                        geometry:{
-                            type: 'Point',
-                            coordinates: [-71.194577, -33.570972]
-                        },
-                        properties:{
-                            title: 'Delicias de Kari',
-                            address: '1234 culipran',
-                            description: 'Vendemos los mejores postres de todo melipilla',
-                            'water': true,
-                            'outdoor':true,
-                            'civil':false,
-                            'wildlife':true,
-                            'heritage':false,
-                            'marker-color': '#94a748'
-                        }
-
-                    }
-                });
-
-                /*var geoJson = [{
-                    type: 'Feature',
-                    geometry:{
-                        type: 'Point',
-                        coordinates: [-71.194577, -33.570972]
-                    },
-                    properties:{
-                        title: 'Delicias de Kari',
-                        address: '1234 culipran',
-                        description: 'Vendemos los mejores postres de todo melipilla',
-                        'water': true,
-                        'outdoor':true,
-                        'civil':false,
-                        'wildlife':true,
-                        'heritage':false,
-                        'marker-color': '#94a748'
-                    }
-                }];*/
-
-                //markers.setGeoJSON(geoJson);
-
+                    $('#staticBackdrop').modal('show');
+                })
             </script>
             <script src="main.js"></script>
         </div>
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Ver empresa
         </button>
 
@@ -127,13 +83,13 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Delicias de Gary</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Delicias de Kari</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <h5>Descripcion</h5>
                         <p>Vendemos las mejores delicias de melipila.</p>
-                        <p>Se venden alfajores, berlines, queques, y todo lo que decees comer.</p>
+                        <p>Se venden alfajores, berlines, queques, y todo lo que desees comer.</p>
                         <hr>
                         <h5>Contacto</h5>
                         <p>+569 23128723</p>
