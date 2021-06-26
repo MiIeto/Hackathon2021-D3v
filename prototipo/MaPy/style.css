@@ -1,5 +1,11 @@
-body {
-    height: 100vh;
+:root{
+    --primary-dark: #668C4A;
+    --primary-light: #A6BF4B;
+    --secondary-light: #F2F0D5;
+    --secondary-dark: #F2C53D;
+    --other: #B1B1AC;
+    --dark: #1A1A1A;
+    --light: #fff;
 }
 
 .map-c {
@@ -19,4 +25,27 @@ button{
 
 .search{
     height: 1.3em;
+}
+
+.msg {
+    height: 3em;
+}
+
+.save {
+    height: 2.4em;
+}
+
+.logout {
+    height: 2.4em;
+}
+
+.i-body {
+    height: 100vh;
+    background: var(--primary-light);
+    color: var(--dark);
+}
+
+.btn-primary {
+    background: var(--secondary-dark) !important;
+    border: none !important;
 }
