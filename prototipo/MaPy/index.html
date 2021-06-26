@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaPy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="d-flex col justify-content-center flex-wrap">
+        <div class="d-flex container justify-content-center mb-5 mt-5">
+            <h1>MaPy</h1>
+        </div>
+        <div class="d-flex row g-3 container">
+            <div class="d-flex align-items-center">
+                <h3 class="m-1">Radio</h3>
+                <input class="m-1" type="range"></input>
+            </div>
+            <div class="d-flex align-items-center">
+                <h3 class="m-1">Tipo Servicio</h3>
+                <select class="form-select form-select-lg m-1" id=""></select>
+            </div>
+            <div class="d-flex align-items-center">
+                <h3 class="m-1">Busqueda</h3>
+                <input class="m-1" type="text"></input>
+                <button><img class="search" src="img/magnifying-glass.svg" alt=""></button>
+            </div>
+        </div>
+        <div class="border border-dark mt-5 map-c">
+            <div id='map' class="map"></div>
+            <script>
+                mapboxgl.accessToken =
+                    'pk.eyJ1IjoibWlsZXRvIiwiYSI6ImNraGwyd3F1eTBwbGcyc3A5ZmlwNTEzb3gifQ.oI_umwJqNk7BHc7CbO7EAQ';
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [-71.194577, -33.570972],
+                    zoom: 15
+                });
+            </script>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

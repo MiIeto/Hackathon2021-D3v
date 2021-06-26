@@ -1,0 +1,22 @@
+body {
+    height: 100vh;
+}
+
+.map-c {
+    height: 50vh;
+    width: 90%;
+}
+
+.map{
+    height: 100%;
+    width: 100%;
+}
+
+button{
+    background: transparent;
+    border: none;
+}
+
+.search{
+    height: 1.3em;
+}
