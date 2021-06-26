@@ -1,6 +1,6 @@
 :root{
-    --primary-dark: #668C4A;
-    --primary-light: #A6BF4B;
+    --primary-dark: #A8FF78;
+    --primary-light: #78FFd6;
     --secondary-light: #F2F0D5;
     --secondary-dark: #F2C53D;
     --other: #B1B1AC;
@@ -41,11 +41,16 @@ button{
 
 .i-body {
     height: 100vh;
-    background: var(--primary-light);
+    background: linear-gradient(to top, var(--primary-dark), var(--primary-light));
     color: var(--dark);
 }
 
 .btn-primary {
     background: var(--secondary-dark) !important;
     border: none !important;
+}
+
+.notif {
+    background: var(--secondary-dark) !important;
+    color: var(--dark) !important;
 }
