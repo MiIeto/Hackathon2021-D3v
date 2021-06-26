@@ -48,6 +48,7 @@ button{
 .btn-primary {
     background: var(--secondary-dark) !important;
     border: none !important;
+    color: var(--dark) !important;
 }
 
 .notif {
